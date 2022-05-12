@@ -42,7 +42,7 @@ export default function SortPopUp({ items }) {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={toggleVisible}>{items[activeItem]}</span>
+        <span onClick={toggleVisible}>{items[activeItem].name}</span>
       </div>
       {visible && (
         <div className="sort__popup">
@@ -54,7 +54,7 @@ export default function SortPopUp({ items }) {
                   onClick={() => onSelectItem(index)}
                   key={nanoid()}
                 >
-                  {item}
+                  {item.name}
                 </li>
               ))}
           </ul>
