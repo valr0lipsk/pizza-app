@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { nanoid } from "nanoid";
 
-const Categories = ({ items, onClickItem }) => {
+const Categories = memo(({ items, onClickItem }) => {
   const [activeItem, setActiveItem] = useState(null);
 
   const onSelectItem = (index) => {
     setActiveItem(index);
+    onClickItem(index);
   };
   return (
     <div className="categories">
@@ -31,6 +32,6 @@ const Categories = ({ items, onClickItem }) => {
       </ul>
     </div>
   );
-};
+});
 
 export default Categories;

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, memo } from "react";
 import { nanoid } from "nanoid";
 
-export default function SortPopUp({ items }) {
+const SortPopUp = memo(({ items }) => {
   const [visible, setVisible] = useState(false);
   const [activeItem, setActiveItem] = useState(0);
   const sortRef = useRef();
@@ -62,4 +62,6 @@ export default function SortPopUp({ items }) {
       )}
     </div>
   );
-}
+});
+
+export default SortPopUp;
